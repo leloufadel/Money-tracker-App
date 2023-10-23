@@ -8,7 +8,8 @@
 }
 
 body {
-  background-color: #7d838a;
+  /* background-color: #7d838a; */
+  background-color: rgb(218, 218, 213);
   overflow-x: hidden;
   max-width: 400px;
   min-height: 750px;
@@ -124,4 +125,53 @@ body {
 .passw-login a {
   text-decoration: none;
   color: rgb(165, 162, 162);
+}
+
+.Home-section {
+  width: 100%;
+  height: 100vh;
+
+  /* background-color: rgb(231, 224, 224); */
+  background-color: rgb(226, 226, 225);
+  border: 1px solid rgb(165, 162, 162);
+}
+
+.home-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.links-btns {
+  width: 100%;
+  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-cont h1 {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 25px;
+  padding-top: 15rem;
+}
+
+.home-button {
+  width: 85%;
+  height: 2.8rem;
+  font-size: 10px;
+  background-color: #3778c2;
+  border-style: none;
+}
+
+.home-button a {
+  text-decoration: none;
+  color: white;
 }
