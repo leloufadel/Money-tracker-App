@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'static_pages/splash'
+  # get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
   devise_for :users
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'static_pages#splash'
 
-  # Defines the root path route ("/")
-  root "home#index"
+  # resources :users, only: [:index, :show, :new] do
+  #   resources :categories, only: [:new, :create, :show, :index, :destroy]
+  #   resources :purchases, only: [:new, :create, :index, :show, :destroy]
+  # end
 end
+
