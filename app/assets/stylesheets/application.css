@@ -91,3 +91,26 @@ margin: auto;
   .shared-links-login {
     display: none;
   }
+  .remember-me{
+    display: none;
+  }
+  .action-login {
+    position: relative;
+  top: -9.7rem;
+  left: 22rem;
+  }
+  .login-submit {
+    background-color: #3778c2;
+    border-style: none;
+    color: white;
+    font-size: 15px;
+  }
+  .passw-login {
+    font-size: 21px;
+    text-align: center;
+  }
+  .passw-login a {
+text-decoration: none;
+color: rgb(165, 162, 162);
+
+  }
