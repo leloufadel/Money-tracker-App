@@ -1,15 +1,177 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css?family=Proxima+Nova");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+body {
+  /* background-color: #7d838a; */
+  background-color: rgb(218, 218, 213);
+  overflow-x: hidden;
+  max-width: 400px;
+  min-height: 750px;
+  margin: auto;
+}
+
+.login-header {
+  background-color: #3778c2;
+  color: #f0ffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  padding: 5px;
+}
+
+.fa-arrow-left {
+  font-size: 1.3rem;
+  color: #f0ffff;
+}
+
+.login-link {
+  font-size: 1.4rem;
+}
+
+.p-hide {
+  display: none;
+}
+
+.cont-top {
+  background-color: white;
+}
+
+.signup-top {
+  display: flex;
+  font-size: larger;
+  align-items: center;
+  width: 100%;
+  height: 4.2rem;
+  gap: 3%;
+  padding-left: 3%;
+  border-bottom: 1px solid #e5e5e5;
+  color: rgb(165, 162, 162);
+}
+
+.fa-user {
+  font-size: 28px;
+  color: white;
+  background-color: #7a8490;
+  border-radius: 50%;
+  padding: 1.5%;
+  border: 1px solid #434b54;
+}
+
+.field-signup {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.field-signup input {
+  width: 100%;
+  height: 3rem;
+  padding-left: 1.5%;
+  outline-style: none;
+  border-color: #d7dfdd;
+  border-style: none;
+  border-bottom: 1px solid #e5e1e1;
+  color: rgb(165, 162, 162);
+  font-size: larger;
+}
+
+.actions-signup {
+  position: relative;
+  bottom: 19.9rem;
+  left: 22.7rem;
+}
+
+.signup-form-btn {
+  background-color: #3778c2;
+  border-style: none;
+  color: white;
+  font-size: 15px;
+}
+
+.shared-links-login {
+  display: none;
+}
+
+.remember-me {
+  display: none;
+}
+
+.action-login {
+  position: relative;
+  top: -9.7rem;
+  left: 22rem;
+}
+
+.login-submit {
+  background-color: #3778c2;
+  border-style: none;
+  color: white;
+  font-size: 15px;
+}
+
+.passw-login {
+  font-size: 21px;
+  text-align: center;
+}
+
+.passw-login a {
+  text-decoration: none;
+  color: rgb(165, 162, 162);
+}
+
+.Home-section {
+  width: 100%;
+  height: 100vh;
+
+  /* background-color: rgb(231, 224, 224); */
+  background-color: rgb(226, 226, 225);
+  border: 1px solid rgb(165, 162, 162);
+}
+
+.home-cont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.links-btns {
+  width: 100%;
+  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-cont h1 {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 25px;
+  padding-top: 15rem;
+}
+
+.home-button {
+  width: 85%;
+  height: 2.8rem;
+  font-size: 10px;
+  background-color: #3778c2;
+  border-style: none;
+}
+
+.home-button a {
+  text-decoration: none;
+  color: white;
+}
