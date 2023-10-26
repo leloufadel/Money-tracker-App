@@ -5,5 +5,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :categories
-  has_many :purchases
+  has_many :purchases, foreign_key: 'author_id'
+  has_many :category_purchases, through: :purchases
 end

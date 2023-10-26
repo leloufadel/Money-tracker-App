@@ -6,19 +6,24 @@
 </nav>
 </header>
 <section class="category-container">
- <% @user.categories.each do |category| %>
- <article class="category-article">
+<% if @categories.empty? %>
+<p>Please add categories to see here, currently there are no categories for the budget</p>
+<% else %>
+<% @categories.each do |category| %>
+    <article class="category-article">
+    <%= link_to category_purchase_path(current_user.id, category.id) do %>
       <div class="article-inner">
-    <div class="icon"><%=image_tag(category.icon, :alt => "category icon.", :class => "category-icon") %></div>
+   <div class="icon">
+  <img src="<%= category.icon %>" class="category-icon" alt="<%= category.name %>" />
+</div>
     <div class="name-category"><%= category.name %></div>
+    <div class="total-category"><span class="total-span">$<%= @category_sums[category.id] %></span></div>
     </div>
-
+    <% end %>
 </article>
 <% end %>
-
+    <% end %>
     <div class="add-category-btn">
     <%= link_to "Add new Category", new_category_path, class: "add-category" %>
   </div>
 </section>
-
-
