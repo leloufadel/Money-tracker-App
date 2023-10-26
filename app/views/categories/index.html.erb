@@ -11,7 +11,7 @@
 <% else %>
 <% @categories.each do |category| %>
     <article class="category-article">
-    <%= link_to category_purchase_path(current_user.id, category.id) do %>
+    <%= link_to category_purchases_path(category.id) do %>
       <div class="article-inner">
    <div class="icon">
   <img src="<%= category.icon %>" class="category-icon" alt="<%= category.name %>" />
