@@ -1,0 +1,23 @@
+<header class="header-cat">
+<nav class="category-nav">
+<%= link_to categories_path(current_user) do %>
+  <i class="fas fa-less-than"></i>
+  <% end %>
+<h1>New Category</h1>
+<i class="fas fa-search"></i>
+</nav>
+</header>
+<div class="category-container-new">
+<%= form_with(model: @category, url: categories_path) do |form| %>
+    <div class="form-food">
+   
+  <div class="label-category">
+    <%= form.text_field :name, class: "name-1", placeholder: "Name" %>
+    <%= form.text_field :icon, class: "icon-field", placeholder: "Icon"  %>
+  </div>
+  <div class="category-submit-btn">
+    <p><%= form.submit "Save", class: "new-category-btn" %></p>
+  </div>
+  </div>
+<% end %>
+<div>
