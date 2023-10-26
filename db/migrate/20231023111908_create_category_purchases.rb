@@ -6,5 +6,7 @@ class CreateCategoryPurchases < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_index :category_purchases, [:purchase_id, :category_id], unique: true
   end
 end

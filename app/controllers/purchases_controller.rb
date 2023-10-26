@@ -1,10 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :find_category, only: %i[new create show]
 
-  # def index
-  #   @purchase = Purchase.all
-  #   @categories = Category.all
-  # end
 
   def index
     # @category_id = params[:id]
@@ -40,16 +36,9 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # def destroy
-  #   return unless @purchase.destroy
-
-  #   redirect_to purshases_url
-  # end
-
   private
 
   def purchase_params
-    # params.require(:purchase).permit(:name, :amount, category_ids: [])
     params.require(:purchase).permit(:name, :amount, :author_id, category_ids: [])
   end
 
