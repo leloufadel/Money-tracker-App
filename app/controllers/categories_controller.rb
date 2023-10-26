@@ -7,7 +7,8 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    # @users = User.all
+    @user = current_user
   end
 
   def show

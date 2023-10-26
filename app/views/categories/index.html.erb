@@ -1,0 +1,24 @@
+<header class="header-cat">
+<nav class="category-nav">
+<i class="fas fa-bars"></i>
+<h1>Categories</h1>
+<i class="fas fa-search"></i>
+</nav>
+</header>
+<section class="category-container">
+ <% @user.categories.each do |category| %>
+ <article class="category-article">
+      <div class="article-inner">
+    <div class="icon"><%=image_tag(category.icon, :alt => "category icon.", :class => "category-icon") %></div>
+    <div class="name-category"><%= category.name %></div>
+    </div>
+
+</article>
+<% end %>
+
+    <div class="add-category-btn">
+    <%= link_to "Add new Category", new_category_path, class: "add-category" %>
+  </div>
+</section>
+
+
