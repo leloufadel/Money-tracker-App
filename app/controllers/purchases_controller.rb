@@ -1,13 +1,10 @@
 class PurchasesController < ApplicationController
   before_action :find_category, only: %i[new create show]
 
-
   def index
-    # @category_id = params[:id]
     @category = Category.find_by(id: params[:category_id])
     @category_name = @category.name
     @purchases = @category.purchases.order(created_at: :desc)
-    # @purchases = Purchase.where(id: @category_purchases.pluck(:purchase_id)).order(created_at: :desc)
     @sum = @purchases.sum(:amount)
   end
 
@@ -17,19 +14,22 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new(author_id: current_user.id, **purchase_params)
-    category_ids = Array(params[:purchase][:category_ids]).reject(&:empty?)
+    @purchase = Purchase.new(purchase_params)
+    @purchase.author_id = current_user.id
 
-    @purchase.user_id = current_user.id
+    existing_purchase = @category.purchases.find_by(name: @purchase.name, amount: @purchase.amount)
+
+    if existing_purchase
+      flash[:error] = 'A similar purchase already exists for this category.'
+      redirect_to category_purchases_path(category_id: @category.id)
+      return
+    end
+
     if @purchase.save
-      # category_ids.each do |category_id|
-      CategoryPurchase.create(purchase: @purchase, category_id: category_ids.first)
-      # end
-      my_category = category_ids.first
-      flash[:success] = 'Successfully captured payment.'
-      # redirect_to category_purchases_url(author_id: current_user.id, id: my_category)
-      redirect_to category_purchases_url(category_id: my_category)
+      CategoryPurchase.create(purchase: @purchase, category_id: @category.id)
 
+      flash[:success] = 'Successfully captured payment.'
+      redirect_to category_purchases_path(category_id: @category.id)
     else
       flash[:error] = 'There was an error while capturing the payment.'
       render :new
@@ -39,7 +39,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:name, :amount, :author_id, category_ids: [])
+    params.require(:purchase).permit(:name, :amount)
   end
 
   def find_category
