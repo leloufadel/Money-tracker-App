@@ -1,4 +1,5 @@
-class CategoryPurshasesController < ApplicationController
+# File name: category_purchases_controller.rb
+class CategoryPurchasesController < ApplicationController
   def index; end
 
   def show; end
