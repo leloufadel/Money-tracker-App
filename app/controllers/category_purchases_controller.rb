@@ -1,4 +1,4 @@
-class CatagoryPurshasesController < ApplicationController
+class CategoryPurshasesController < ApplicationController
   def index; end
 
   def show; end
