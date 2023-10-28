@@ -32,7 +32,7 @@
 # 📖 Money-tracker App <a name="about-project"></a>
 
 **Money-tracker** app is a mobile web application where you can manage your Money-tracker: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
-<a href="https://www.loom.com/share/0285c27de60647e2b20e09fc2ba613cc">video presentation </a>
+<a href="https://www.loom.com/share/42fed3e2919e4b59b8a6f7b315549946">video presentation </a>
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
