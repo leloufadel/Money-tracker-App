@@ -1,1 +1,2 @@
-
+class CatagoryPurshasesController < ApplicationController
+end
