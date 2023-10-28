@@ -1,0 +1,39 @@
+<header class = "login-header">
+<%= link_to root_path do %>
+<i class=" fa fa-arrow-left"> </i>
+<% end %>
+<div class = "login-link">
+<p> Register</p>
+</div>
+<div>
+<p class = "p-hide" >Next</p>
+</div>
+</header>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="cont-top">
+  <div class="signup-top">
+<i class=" fa fa-user"></i>
+<p>Upload picture</p>
+  </div>
+</div>
+  <div class="field-signup">
+  <div class="input-cont">
+  <%= f.text_field :name, placeholder: "Full name", class: "input-space" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    <% if @minimum_password_length %>
+    <em><% @minimum_password_length %></em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password" %>
+    </div>
+  </div>
+
+  <div class="actions-signup">
+    <%= f.submit "Next", class: "signup-form-btn" %>
+  </div>
+<% end %>
+<div class="shared-links-login">
+<%= render "devise/shared/links" %>
+</div>

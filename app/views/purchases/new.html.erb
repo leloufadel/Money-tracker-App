@@ -1,0 +1,33 @@
+
+  <header class="header-cat">
+<nav class="category-nav payment-nav">
+<%# <link_to user_categories_path(current_user) do > %>
+    <%= link_to categories_path(@category) do %>
+  <i class="fas fa-less-than"></i>
+  <% end %>
+<h1>Add new payment</h1>
+<i class="fas fa-search"></i>
+</nav>
+</header>
+
+<div class="new-payment-container">
+<%= form_with(model: @purchase, url: category_purchases_path(@category, category_id: @category.id), method: :post) do |f| %>
+
+    <div class="label-payment">
+      <%= f.text_field :name, class: "form-control", placeholder: "Name", required: true %>
+    <%= f.number_field :amount, class: "form-control", placeholder: "Amount", required: true %>
+  </div>
+  <div class="categories-form-cont">
+  <%= f.label :category_ids, "Categories", class: "all-categories-label" %>
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+    <div class="form-check">
+      <%= cb.check_box(class: "form-check-input") %>
+      <%= cb.label(class: "form-check-label") %>
+    </div>
+  <% end %>
+</div>
+    <div class="payment-submit-btn">
+      <%= f.submit "Save", class: "new-payment-btn" %>
+    </div>
+  <% end %>
+  </div>
