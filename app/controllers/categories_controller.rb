@@ -8,8 +8,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def show; end
-
   def new
     @category = Category.new
   end
@@ -25,8 +23,6 @@ class CategoriesController < ApplicationController
       render :new
     end
   end
-
-  def destroy; end
 
   private
 
