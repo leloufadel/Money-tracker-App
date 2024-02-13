@@ -1,0 +1,29 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Money_tracker_App_development
+  username: postgres
+  password: 5001
+  port: 5432
+
+  
+test:
+  <<: *default
+  database: Money_tracker_App_test
+  username: postgres
+  password: 5001
+
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: Money_tracker_App_production
+  username: Money_tracker_App
+  password: <%= ENV["HELLO_RAILS_DATABASE_PASSWORD"] %>
+
+
