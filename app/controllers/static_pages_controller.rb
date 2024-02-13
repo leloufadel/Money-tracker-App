@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def splash
-    render :splash
+    # render :splash
   end
 end
